@@ -15,6 +15,11 @@ namespace TDSN2024
         public Form1()
         {
             InitializeComponent();
+            ExibirRaio(false);
+            ExibirLado(false);
+            ExibirAltura(false);
+            ExibirBase(false);
+            ExibirTriangulo(false);
         }
 
         private void cmbForma_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,26 +37,24 @@ namespace TDSN2024
                 case "Quadrado":
                     ExibirRaio(false);
                     ExibirLado(true);
-                    ExibirAltura(true);
-                    ExibirBase(true);
+                    ExibirAltura(false);
+                    ExibirBase(false);
                     ExibirTriangulo(false);
 
                     break;
                 case "Triângulo":
                     ExibirRaio(false);
-                    ExibirLado(true);
+                    ExibirLado(false);
                     ExibirAltura(true);
                     ExibirBase(true);
                     ExibirTriangulo(true);
                     break;
                 case "Retangulo":
                     ExibirRaio(false);
-                    ExibirLado(true); 
+                    ExibirLado(false); 
                     ExibirAltura(true);
-                    ExibirAltura(false);
                     ExibirBase(true);
                     ExibirTriangulo(false);
-
                     break;
                 default:
                     break;
@@ -88,10 +91,13 @@ namespace TDSN2024
             switch (cmbForma.Text)
             {
                 case "Quadrado":
-                    FormaGeometrica objeto;
-                    objeto = new Quadrado() { Lado = Convert.ToDouble(txtLado.Text) };
-                    cmbObjetos.Items.Add(objeto);
+                    FormaGeometrica objetoQuadrado = new Quadrado() { Lado = Convert.ToDouble(txtLado.Text) };
+                    cmbObjetos.Items.Add(objetoQuadrado);
                     txtLado.Clear();
+                    break;
+                case "Retangulo":
+                    FormaGeometrica objetoRetangulo = new Retangulo(Convert.ToDouble(txtAltura.Text),(Convert.ToDouble(txtBase.Text);
+                    
                     break;
                 default:
                     break;

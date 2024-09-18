@@ -3,13 +3,19 @@
     class Retangulo : FormaGeometrica
     {
         private double _base;
+        private double altura;
+
+        public Retangulo(double altura, double _base)
+        {
+            this.altura = altura;
+            this._base = _base;
+        }
 
         public double Base
         {
             get { return _base; }
             set { _base = value; }
         }
-        private double altura;
 
         public double Altura
         {
